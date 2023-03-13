@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.LinkedList;
@@ -19,7 +18,8 @@ public class ListOfArrays {
         keys = (String[]) allData.get(0);
         values = (String[]) allData.get(1);
 
-        PrintStream fileStream = new PrintStream(new File(path));
+        assert path != null;
+        PrintStream fileStream = new PrintStream(path);
         for (int i = 0; i <= keys.length; i++) {
             fileStream.println("Q: " + keys[i]);
             fileStream.println("A: " + values[i]);

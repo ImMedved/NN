@@ -4,11 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +16,7 @@ public class StartTask {
         public JButton button1, button2, button3, button4;
         static JTextField textField;
         protected JTextArea textArea;
-        public String output = new String();
+        public String output = "";
 
         public UI() {
             button1 = new JButton("Add new string");
@@ -69,7 +64,6 @@ public class StartTask {
 
             GridBagConstraints c = new GridBagConstraints();
             c.gridwidth = GridBagConstraints.REMAINDER;
-            c.fill = GridBagConstraints.HORIZONTAL;
             c.fill = GridBagConstraints.BOTH;
             c.weightx = 1.0;
             c.weighty = 1.0;
@@ -113,7 +107,7 @@ public class StartTask {
             } else if ("AddA".equals(e.getActionCommand())) {
 
             } else if ("Show".equals(e.getActionCommand())) {
-                LinkedList allData = new LinkedList<>();
+                LinkedList allData;
                 allData = new getActiveData();
                 try {
                     new ListOfArrays(allData);
